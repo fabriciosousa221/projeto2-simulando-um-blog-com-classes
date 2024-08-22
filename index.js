@@ -1,18 +1,9 @@
-const Author = require('./Author');
-const Comment = require('./Comment');
-const Post = require('./Post');
-const author = new Author('John');
-const post = author.createPost('primeiro post', 'Conteúdo do post.');
-const comment1 = new Comment('Legal');
-const comment2 = new Comment('Bom de mais.');
+const Author = require('./Author')
+const john = new Author('John Wick')
+const post = john.createPost('As crônicas de John Wick', 'bla bla bla bla')
 
-post.addComment(comment1);
-post.addComment(comment2);
+post.addComments('Sopa', 'Eu amo as crônicas do cara aí')
+post.addComments('Alan', 'Eu odeio as crônicas desse cara muito feio!')
 
-console.log(`Autor: ${post.author.name}`);
-console.log(`Título: ${post.title}`);
-console.log(`Conteúdo: ${post.content}`);
-console.log('Comentários:');
-post.comments.forEach(comment => {
-    console.log(`- ${comment.content}`);
-});
+console.log(john)
+console.log(post)
